@@ -23,6 +23,12 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: "default"
+              env:
+            - name: KUBERNETES_POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+2.
           resources:
             requests:
               memory: "128Mi"
