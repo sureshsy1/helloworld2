@@ -8,6 +8,10 @@ public class HelloController {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello, World!";
+        String podIp = System.getenv("KUBERNETES_POD_IP");
+        if (podIp == null) {
+            return "Hello, World!";
+        }
+        return "Hello, World! (from pod " + podIp + ")";
     }
 }
