@@ -11,5 +11,5 @@ spec:
   rules:
   - from:
     - source:
-        # 👈 Changed from 'default' to 'helloworld1-sa'
-        principals: ["cluster.local/ns/your-namespace-name/sa/helloworld1-sa"]
+        # Changed 'your-namespace-name' to 'suresh-apps'
+        principals: ["cluster.local/ns/suresh-apps/sa/helloworld1-sa"]
