@@ -2,7 +2,7 @@ apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
   name: exclusive-access-to-helloworld2
-  namespace: your-namespace-name
+  namespace: suresh-apps
 spec:
   selector:
     matchLabels:
