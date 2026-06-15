@@ -1,0 +1,15 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: exclusive-access-to-helloworld2
+  namespace: your-namespace-name
+spec:
+  selector:
+    matchLabels:
+      app: helloworld2
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        # 👈 Changed from 'default' to 'helloworld1-sa'
+        principals: ["cluster.local/ns/your-namespace-name/sa/helloworld1-sa"]
